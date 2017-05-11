@@ -20,5 +20,6 @@ RUN TINI_VERSION=`curl https://github.com/krallin/tini/releases/latest | grep -o
  && rm tini.rpm
 
 ENV PATH /opt/conda/bin:$PATH
+ENV LANG en_US.utf8
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
