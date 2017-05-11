@@ -23,3 +23,4 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LANG en_US.utf8
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
+CMD ["bash"]
