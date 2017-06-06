@@ -15,13 +15,5 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
     rm ~/miniconda.sh
 
-RUN TINI_VERSION=`curl https://github.com/krallin/tini/releases/latest | grep -o "/v.*\"" | sed 's:^..\(.*\).$:\1:'` \
- && curl -L "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini_${TINI_VERSION}.rpm" > tini.rpm \
- && rpm -i tini.rpm \
- && rm tini.rpm
-
 ENV PATH /opt/conda/bin:$PATH
 ENV LANG en_US.utf8
-
-#ENTRYPOINT [ "/usr/bin/tini", "--" ]
-#CMD ["bash"]
